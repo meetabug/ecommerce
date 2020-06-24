@@ -8,15 +8,15 @@ class ProductAttribute extends Model
 {
     protected $table = 'product_attributes';
 
-    protected $fillable = ['product_id', 'quantity', 'price'];
+    protected $fillable = ['attribute_id', 'value', 'product_id', 'quantity', 'price'];
 
     public function product()
     {
         return $this->belongsTo(Product::class);
     }
 
-    public function attributeValues()
+    public function attribute()
     {
-        return $this->belongsToMany(AttributeValue::class);
+        return $this->belongsTo(Attribute::class);
     }
 }
