@@ -13,4 +13,9 @@ interface CategoryContract
 
     public function deleteCategory($id);
 
+    public function treeList();
+
+    public function findBySlug($slug);
+
+
 }

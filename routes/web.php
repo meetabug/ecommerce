@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
-require  'admin.php';
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,6 +13,9 @@ require  'admin.php';
 */
 
 Route::view('/', 'site.pages.homepage');
+Route::get('/category/{slug}', 'Site\CategoryController@show')->name('category.show');
 
 Auth::routes();
+require  'admin.php';
+
 
